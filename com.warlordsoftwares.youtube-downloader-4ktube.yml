@@ -57,6 +57,7 @@ modules:
   - ffmpeg.json
   - mpv.json
   - python3-req.json
+  - python3-yt-dlp.json
   - name: youtube-downloader-4ktube
     buildsystem: simple
     build-commands:
@@ -69,5 +70,5 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/4ktube/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE-2024.7.5.tar.gz
-        sha256: 027db89e88f8999c2544ac77a3b81d3cc095a7e7c69cc525597bef9163405174
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE-2024.7.11.tar.gz
+        sha256: d83d57f5339c84ff5e769262f24e7675f09a4423dc061d7baf76b737a49f3696
