@@ -54,10 +54,12 @@ modules:
       - type: git
         url: https://github.com/LuaJIT/LuaJIT.git
         commit: 4c2441c16ce3c4e312aaefecc6d40c4fe21de97c
+
   - ffmpeg.json
   - mpv.json
   - python3-req.json
   - python3-yt-dlp.json
+
   - name: youtube-downloader-4ktube
     buildsystem: simple
     build-commands:
@@ -72,3 +74,4 @@ modules:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE-2024.7.26.tar.gz
         sha256: 1fd60075100844a781d2861879d4ea9c6ecda84f59d89b1bf9883f320f1151fc
+
