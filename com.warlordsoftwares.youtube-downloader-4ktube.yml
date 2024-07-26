@@ -70,5 +70,5 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/4ktube/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE-2024.7.11.tar.gz
-        sha256: ace9dd4ad3e12cd72737be05bbc5c4d753adf7d2457ac1efcef4cfc9866e3ee6
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE-2024.7.26.tar.gz
+        sha256: 01b47915aff16be3be62236f63307edaa5bb0b5593d73905659f05a98dc74c8a
