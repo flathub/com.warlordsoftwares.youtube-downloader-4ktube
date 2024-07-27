@@ -2,12 +2,11 @@
             "name": "ffmpeg",
             "cleanup": ["/include", "/lib/pkgconfig", "/share/ffmpeg/examples"],
             "config-opts": [
-                "--enable-shared",
-                "--disable-static",
-                "--disable-debug",
-                "--enable-gnutls",
                 "--disable-doc",
-                "--disable-ffplay",
+                "--disable-debug",
+                "--disable-static",
+                "--enable-shared",
+                "--enable-gnutls",
                 "--enable-gpl",
                 "--enable-libass",
                 "--enable-libfribidi",
@@ -18,7 +17,8 @@
                 "--enable-libvpx",
                 "--enable-libx264",
                 "--enable-libx265",
-                "--enable-libxvid"
+                "--enable-libxvid",
+                "--enable-libdav1d"
             ],
             "build-options": {
                 "arch": {
