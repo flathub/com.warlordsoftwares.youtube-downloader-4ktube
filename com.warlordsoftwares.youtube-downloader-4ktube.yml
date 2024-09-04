@@ -17,7 +17,7 @@ finish-args:
   # QT Platform flag
   - --env=QT_QPA_PLATFORM=xcb
   # Wayland access
-  - --socket=wayland
+  - --socket=fallback-wayland
   - --device=dri
   # Connectivity
   - --share=network
