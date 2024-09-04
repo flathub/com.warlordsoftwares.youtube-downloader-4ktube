@@ -26,7 +26,7 @@ finish-args:
   # Audio playback
   - --socket=pulseaudio
   # QT Platform
-  - --env=QT_QPA_PLATFORM=xcb
+  - --env=QT_QPA_PLATFORM=wayland
 tags:
   - proprietary
 cleanup:
