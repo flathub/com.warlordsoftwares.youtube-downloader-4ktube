@@ -11,14 +11,21 @@ build-options:
     - BASEAPP_REMOVE_WEBENGINE=1
 command: 4ktube.sh
 finish-args:
-  - --share=network
+  # X11 + XShm access
   - --socket=x11
   - --share=ipc
+  # QT Platform flag
   - --env=QT_QPA_PLATFORM=xcb
+  # Wayland access
+  - --socket=wayland
+  - --device=dri
+  # Connectivity
+  - --share=network
+  # Directory access
   - --filesystem=xdg-download
   - --filesystem=xdg-documents
   - --filesystem=xdg-run/gvfsd
-  - --device=dri
+  # Audio playback
   - --socket=pulseaudio
 tags:
   - proprietary
