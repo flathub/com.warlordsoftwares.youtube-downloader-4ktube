@@ -12,12 +12,10 @@ build-options:
 command: 4ktube.sh
 finish-args:
   # X11 + XShm access
-  - --socket=x11
   - --share=ipc
-  # QT Platform flag
-  - --env=QT_QPA_PLATFORM=xcb
+  - --socket=fallback-x11
   # Wayland access
-  - --socket=fallback-wayland
+  - --socket=wayland
   - --device=dri
   # Connectivity
   - --share=network
@@ -27,6 +25,8 @@ finish-args:
   - --filesystem=xdg-run/gvfsd
   # Audio playback
   - --socket=pulseaudio
+  # QT Platform
+  - --env=QT_QPA_PLATFORM=xcb
 tags:
   - proprietary
 cleanup:
