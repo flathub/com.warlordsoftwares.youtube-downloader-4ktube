@@ -2,7 +2,7 @@
       "name": "mpv",
       "buildsystem": "simple",
       "build-commands": [
-        "python3 waf configure --disable-alsa --disable-build-date --disable-manpage-build --prefix=/app",
+        "python3 waf configure --disable-alsa --disable-build-date --disable-manpage-build --enable-gl-x11 --prefix=/app",
         "python3 waf build",
         "python3 waf install"
       ],
