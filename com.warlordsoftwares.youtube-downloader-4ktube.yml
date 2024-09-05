@@ -11,13 +11,14 @@ build-options:
     - BASEAPP_REMOVE_WEBENGINE=1
 command: 4ktube.sh
 finish-args:
-  - --share=ipc
-  - --socket=x11
-  - --device=dri
   - --share=network
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
   - --filesystem=xdg-download
   - --filesystem=xdg-documents
   - --filesystem=xdg-run/gvfsd
+  - --device=dri
   - --socket=pulseaudio
 tags:
   - proprietary
@@ -72,5 +73,5 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE-2024.9.1.tar.gz
-        sha256: 2df34c5bc9b899a2d20381bfa4d46006a406fc468c5a8d9140d40b79f69906ee
+        sha256: 5c7c6a51d9005c9165637ce7ccde3bb4cec7ca684ca24f691954bdd581ac2bc3
 
