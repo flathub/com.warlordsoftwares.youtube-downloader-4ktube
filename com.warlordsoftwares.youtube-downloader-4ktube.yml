@@ -1,15 +1,14 @@
 app-id: com.warlordsoftwares.youtube-downloader-4ktube
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: 5.15-24.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '5.15-23.08'
-cleanup-commands:
-  - /app/cleanup-BaseApp.sh
-build-options:
-  env:
-    - BASEAPP_REMOVE_WEBENGINE=1
+base-version: '5.15-24.08'
 command: 4ktube.sh
+
+tags:
+  - proprietary
+
 finish-args:
   - --share=network
   - --share=ipc
@@ -20,27 +19,33 @@ finish-args:
   - --filesystem=xdg-run/gvfsd
   - --device=dri
   - --socket=pulseaudio
-tags:
-  - proprietary
+  - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
+  - --env=QTWEBENGINE_CHROMIUM_FLAGS=--no-sandbox
+  - --env=QTWEBENGINE_DISABLE_SANDBOX=1
+  - --env=QTWEBENGINE_RESOURCES_PATH=/app/share/qt5/resources
+  - --env=QTWEBENGINE_LOCALES_PATH=/app/share/qt5/translations/qtwebengine_locales
+
+cleanup-commands:
+  - /app/cleanup-BaseApp.sh
+
 cleanup:
   - /include
   - /lib/pkgconfig
+
 modules:
-  - name: libass
-    sources:
-      - type: archive
-        url: https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.xz
-        sha256: f0da0bbfba476c16ae3e1cfd862256d30915911f7abaa1b16ce62ee653192784
-      - type: script
-        commands:
-          - autoreconf -fiv
-        dest-filename: autogen.sh
-    cleanup:
-      - /include
-      - /lib/pkgconfig
-      - /share
-      - '*.a'
-      - '*.la'
+#  - name: libass
+#    buildsystem: autotools
+#    config-opts:
+#      - --disable-static
+#    cleanup:
+#      - /include
+#      - /lib/*.la
+#      - /lib/pkgconfig
+#    sources:
+#      - type: archive
+#        url: https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.gz
+#        sha256: d653be97198a0543c69111122173c41a99e0b91426f9e17f06a858982c2fb03d
+#
   - name: luajit
     no-autogen: true
     make-install-args:
@@ -56,9 +61,9 @@ modules:
         commit: 4c2441c16ce3c4e312aaefecc6d40c4fe21de97c
 
   - ffmpeg.json
-  - mpv.json
-  - python3-req.json
-  - python3-yt-dlp.json
+#  - mpv.json
+#  - python3-req.json
+#  - python3-yt-dlp.json
 
   - name: youtube-downloader-4ktube
     buildsystem: simple
@@ -72,6 +77,5 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/4ktube/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE-2025.5.23.tar.gz
-        sha256: bf588b25ffadd21f2ba279b56e6499d795899238b1e14fb00433bc4ea3ba53bc
-
+        url: https://warlordsoftwares.com/static/app_builds/FLATPAK_4KTUBE-2025.6.5.tar.gz  # change path for prod
+        sha256: e375fcd7720d7379dd4de2a3d3a86bd80d2126e890f038c8707202f1a82ba783
