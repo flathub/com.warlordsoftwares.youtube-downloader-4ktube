@@ -33,19 +33,6 @@ cleanup:
   - /lib/pkgconfig
 
 modules:
-#  - name: libass
-#    buildsystem: autotools
-#    config-opts:
-#      - --disable-static
-#    cleanup:
-#      - /include
-#      - /lib/*.la
-#      - /lib/pkgconfig
-#    sources:
-#      - type: archive
-#        url: https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.gz
-#        sha256: d653be97198a0543c69111122173c41a99e0b91426f9e17f06a858982c2fb03d
-#
   - name: luajit
     no-autogen: true
     make-install-args:
@@ -60,10 +47,9 @@ modules:
         url: https://github.com/LuaJIT/LuaJIT.git
         commit: 4c2441c16ce3c4e312aaefecc6d40c4fe21de97c
 
-  - ffmpeg.json
-#  - mpv.json
-#  - python3-req.json
-#  - python3-yt-dlp.json
+  - ffmpeg_mpv.json
+  - python3-req.json
+  - python3-yt-dlp.json
 
   - name: youtube-downloader-4ktube
     buildsystem: simple
@@ -77,5 +63,5 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/4ktube/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/FLATPAK_4KTUBE-2025.6.5.tar.gz  # change path for prod
-        sha256: e375fcd7720d7379dd4de2a3d3a86bd80d2126e890f038c8707202f1a82ba783
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE.tar.gz
+        sha256: eafb3f4fce9ec7168adf467f307f4715e2ab08f9a3c37f7bcb6df8331a0c2a13
