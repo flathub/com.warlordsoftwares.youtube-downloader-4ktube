@@ -48,6 +48,7 @@ modules:
         commit: 4c2441c16ce3c4e312aaefecc6d40c4fe21de97c
 
   - ffmpeg_mpv.json
+  - mpv.json
   - python3-req.json
   - python3-yt-dlp.json
 
