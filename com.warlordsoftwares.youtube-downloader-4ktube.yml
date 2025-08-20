@@ -65,4 +65,4 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE.tar.gz
-        sha256: 56af2515996e1b11a68ab1ac7a43d4543ebb461220a75a9bb55e9aa00be62113
+        sha256: afb0f1a8a5c188d956ad212479676dd5acb6c5ca50a8c8b168d887709597d959
