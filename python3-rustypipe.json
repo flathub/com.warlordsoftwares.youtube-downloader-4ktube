@@ -1,0 +1,19 @@
+{
+    "name": "python3-yt-dlp-get-pot-rustypipe",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"yt-dlp-get-pot-rustypipe==0.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/33/e8/ebd888100684c10799897296e3061c19ba5559b641f8da218bf48229a815/yt_dlp-2025.8.20-py3-none-any.whl",
+            "sha256": "073c97e2a3f9cd0fa6a76142c4ef46ca62b2575c37eaf80d8c3718fd6f3277eb"
+        },
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/ca/85/3e379cb2f2e214764c1e15485d1e2ec6d6f839b29289a1202fc26c93e07d/yt_dlp_get_pot_rustypipe-0.2.0-py3-none-any.whl",
+            "sha256": "601b3b940e49bc45ba48fcdb2327850a75ba23c7e91709b5abbff5d4b914fa0b"
+        }
+    ]
+}
