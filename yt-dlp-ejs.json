@@ -1,0 +1,19 @@
+{
+  "name": "yt-dlp-ejs",
+  "buildsystem": "simple",
+  "build-commands": [
+    "pip3 install --prefix=/app \"$(echo *.whl)\""
+  ],
+  "sources": [
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/9d/0d/1f0d7a735ca60b87953271b15d00eff5eef05f6118390ddf6f81982526ed/yt_dlp_ejs-0.3.2-py3-none-any.whl",
+      "sha256": "f2dc6b3d1b909af1f13e021621b0af048056fca5fb07c4db6aa9bbb37a4f66a9",
+      "x-checker-data": {
+        "type": "pypi",
+        "name": "yt-dlp-ejs",
+        "packagetype": "bdist_wheel"
+      }
+    }
+  ]
+}
