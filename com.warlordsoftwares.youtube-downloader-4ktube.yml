@@ -1,9 +1,9 @@
 app-id: com.warlordsoftwares.youtube-downloader-4ktube
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: "5.15-24.08"
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '5.15-23.08'
+base-version: "5.15-24.08"
 command: 4ktube.sh
 
 tags:
@@ -67,7 +67,7 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE.tar.gz
-        sha256: 2584c045bda352488071699ed7a9716b53e5f14aa19f13aedfeeb53acae5a105
+        sha256: dcf8d4acc6f25ed9d34dca92b16aa6871369aaeed953ce8c55d80a9203a4ee3d
 
 
 
