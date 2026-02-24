@@ -7,8 +7,8 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/a4/90/8911146822364666be47f184c4180cec20fcc537a268ef40d1ab077dd25b/yt_dlp_ejs-0.4.0-py3-none-any.whl",
-            "sha256": "19278cff397b243074df46342bb7616c404296aeaff01986b62b4e21823b0b9c"
+            "url": "https://files.pythonhosted.org/packages/7e/5b/1283356b70d4893a8a050cee15092e1b08ea15310b94365f88067146721b/yt_dlp_ejs-0.5.0-py3-none-any.whl",
+            "sha256": "674fc0efea741d3100cdf3f0f9e123150715ee41edf47ea7a62fbdeda204bdec"
         }
     ]
 }
