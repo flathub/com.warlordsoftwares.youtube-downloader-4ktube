@@ -1,9 +1,9 @@
 app-id: com.warlordsoftwares.youtube-downloader-4ktube
 runtime: org.kde.Platform
-runtime-version: "5.15-24.08"
+runtime-version: "5.15-25.08"
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: "5.15-24.08"
+base-version: "5.15-25.08"
 command: 4ktube.sh
 
 tags:
@@ -35,8 +35,6 @@ cleanup:
 modules:
   - name: luajit
     no-autogen: true
-    make-install-args:
-      - PREFIX=${FLATPAK_DEST}
     cleanup:
       - /bin
       - /include
@@ -45,10 +43,54 @@ modules:
     sources:
       - type: git
         url: https://github.com/LuaJIT/LuaJIT.git
-        commit: 4c2441c16ce3c4e312aaefecc6d40c4fe21de97c
+        disable-shallow-clone: true
+        commit: 659a61693aa3b87661864ad0f12eee14c865cd7f
+      - type: shell
+        commands:
+          - sed -i 's|/usr/local|/app|' ./Makefile
 
-  - ffmpeg_mpv.json
-  - mpv.json
+  - name: libass
+    config-opts:
+      - --disable-static
+    sources:
+      - type: archive
+        url: https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz
+        sha256: 78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a
+
+  - name: libplacebo
+    buildsystem: meson
+    config-opts:
+      - -Dvulkan=disabled
+      - -Dshaderc=disabled
+    sources:
+      - type: git
+        url: https://github.com/haasn/libplacebo.git
+        tag: v7.360.1
+        commit: cee9b076f2c63104ccfd497fa79c39a867293ec4
+
+  - name: mpv
+    buildsystem: meson
+    build-options:
+      cflags: -DNDEBUG=1
+    config-opts:
+      - -Dlibmpv=false
+      - -Dbuild-date=false
+      - -Dpulse=enabled
+      - -Dalsa=enabled
+      - -Dmanpage-build=disabled
+      - -Dcdda=disabled
+      - -Ddvbin=disabled
+      - -Ddvdnav=disabled
+      - -Djavascript=disabled
+      - -Dlibarchive=disabled
+      - -Dlua=enabled
+      - -Dshaderc=disabled
+      - -Dvulkan=disabled
+    sources:
+      - type: archive
+        url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.41.0.tar.gz
+        sha256: ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209
+
   - python3-req.json
   - python3-yt-dlp.json
   - deno.json
@@ -67,7 +109,7 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE.tar.gz
-        sha256: ad0bee4c5fc62e0ff434d1d7e697016fb388f333cc9916bba97431c836ad1387
+        sha256: fc633dbfd0c94ba645e515fb248892968aa86b17d83f519058b949bdae8ffbad
 
 
 
