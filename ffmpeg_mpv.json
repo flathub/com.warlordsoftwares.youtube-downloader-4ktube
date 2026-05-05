@@ -1,4 +1,10 @@
 {
+  "build-options": {
+    "strip": true,
+    "cflags": "-O2 -fPIC",
+    "cxxflags": "-O2 -fPIC"
+  },
+
   "name": "libmpv",
   "cleanup": [
     "/include",
@@ -6,7 +12,7 @@
   ],
   "buildsystem": "simple",
   "build-commands": [
-    "python3 waf configure --prefix=${FLATPAK_DEST} --enable-libmpv-shared --disable-cplayer --disable-alsa --disable-manpage-build --disable-debug-build",
+    "python3 waf configure --prefix=${FLATPAK_DEST} --enable-libmpv-shared --disable-cplayer --disable-alsa --disable-manpage-build --disable-debug-build --disable-libarchive --disable-javascript",
     "python3 waf build",
     "python3 waf install"
   ],
@@ -23,6 +29,7 @@
       "dest-filename": "waf"
     }
   ],
+
   "modules": [
     {
       "name": "libass",
@@ -67,12 +74,16 @@
         }
       ]
     },
+
     {
       "name": "ffmpeg",
+      "buildsystem": "autotools",
       "cleanup": [
         "/include",
         "/lib/pkgconfig",
-        "/share/ffmpeg/examples"
+        "/share",
+        "*.a",
+        "*.la"
       ],
       "config-opts": [
         "--enable-shared",
@@ -90,7 +101,11 @@
         "--enable-libvpx",
         "--enable-libx264",
         "--enable-libmp3lame",
-        "--enable-libvorbis"
+        "--enable-libvorbis",
+
+        "--enable-protocols",
+        "--enable-demuxers",
+        "--enable-parsers"
       ],
       "sources": [
         {
@@ -123,6 +138,7 @@
             }
           ]
         },
+
         {
           "name": "x264",
           "config-opts": [
@@ -138,11 +154,6 @@
                 "config-opts": [
                   "--disable-lto"
                 ]
-              },
-              "x86_64": {
-                "config-opts": [
-                  "--disable-asm"
-                ]
               }
             }
           },
@@ -157,6 +168,7 @@
             }
           ]
         },
+
         {
           "name": "lame",
           "cleanup": [
