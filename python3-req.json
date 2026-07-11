@@ -85,16 +85,22 @@
       ]
     },
     {
-      "name": "python3-mutagen",
+      "name": "mutagen",
       "buildsystem": "simple",
       "build-commands": [
-        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mutagen\" --no-build-isolation"
+        "pip3 install --no-build-isolation --prefix=/app ."
       ],
       "sources": [
         {
-          "type": "file",
-          "url": "https://files.pythonhosted.org/packages/b0/7a/620f945b96be1f6ee357d211d5bf74ab1b7fe72a9f1525aafbfe3aee6875/mutagen-1.47.0-py3-none-any.whl",
-          "sha256": "edd96f50c5907a9539d8e5bba7245f62c9f520aef333d13392a79a4f70aca719"
+          "type": "archive",
+          "url": "https://github.com/quodlibet/mutagen/archive/refs/tags/release-1.48.1.tar.gz",
+          "sha256": "779f18015af1b28af59bd80c6292aa8151ca7e5fe6a36e17a394dda515981a5e",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/quodlibet/mutagen/releases/latest",
+            "version-query": ".tag_name",
+            "url-query": "\"https://github.com/quodlibet/mutagen/archive/refs/tags/\" + $version + \".tar.gz\""
+          }
         }
       ]
     },
