@@ -183,8 +183,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/aaugustin/websockets/archive/refs/tags/16.0.tar.gz",
-          "sha256": "c720700d313af5d1c61372da62d78c5b6192ed09871367df65a8e1087b60b1f0",
+          "url": "https://github.com/aaugustin/websockets/archive/refs/tags/16.1.tar.gz",
+          "sha256": "b3c787531ac46bce9733c03e600ef89e66b4fdd8683582fba1cf04d0ac14a155",
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/aaugustin/websockets/tags",
