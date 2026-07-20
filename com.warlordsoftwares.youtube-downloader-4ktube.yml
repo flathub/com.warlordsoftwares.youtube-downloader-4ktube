@@ -57,7 +57,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz
-        sha256: e852bf35f8b66568397361468fc0193eee684c4087c1b891a51e63e14e6c0aa3
+        sha256: 78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a
 
   - name: libplacebo
     buildsystem: meson
@@ -91,7 +91,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.41.0.tar.gz
-        sha256: e852bf35f8b66568397361468fc0193eee684c4087c1b891a51e63e14e6c0aa3
+        sha256: ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209
 
   - python3-req.json
   - python3-yt-dlp.json
