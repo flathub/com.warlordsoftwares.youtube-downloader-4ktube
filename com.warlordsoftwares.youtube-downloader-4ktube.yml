@@ -24,6 +24,8 @@ finish-args:
   - --env=QTWEBENGINE_DISABLE_SANDBOX=1
   - --env=QTWEBENGINE_RESOURCES_PATH=/app/share/qt5/resources
   - --env=QTWEBENGINE_LOCALES_PATH=/app/share/qt5/translations/qtwebengine_locales
+  - --env=QT_ENABLE_HIGHDPI_SCALING=1
+  - --env=APP_PLATFORM=FLATPAK
 
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
@@ -55,7 +57,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/libass/libass/releases/download/0.17.4/libass-0.17.4.tar.xz
-        sha256: 78f1179b838d025e9c26e8fef33f8092f65611444ffa1bfc0cfac6a33511a05a
+        sha256: e852bf35f8b66568397361468fc0193eee684c4087c1b891a51e63e14e6c0aa3
 
   - name: libplacebo
     buildsystem: meson
@@ -89,7 +91,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/mpv-player/mpv/archive/refs/tags/v0.41.0.tar.gz
-        sha256: ee21092a5ee427353392360929dc64645c54479aefdb5babc5cfbb5fad626209
+        sha256: e852bf35f8b66568397361468fc0193eee684c4087c1b891a51e63e14e6c0aa3
 
   - python3-req.json
   - python3-yt-dlp.json
@@ -101,16 +103,12 @@ modules:
     build-commands:
       - mkdir -p ${FLATPAK_DEST}/4ktube
       - cp -r * ${FLATPAK_DEST}/4ktube
-      - install -Dm755 ${FLATPAK_DEST}/4ktube/4ktube.sh ${FLATPAK_DEST}/bin/4ktube.sh
-      - install -Dm644 ${FLATPAK_DEST}/4ktube/share/icons/icon.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.warlordsoftwares.youtube-downloader-4ktube.png
-      - install -Dm644 ${FLATPAK_DEST}/4ktube/share/applications/youtube-downloader-4ktube.desktop ${FLATPAK_DEST}/share/applications/com.warlordsoftwares.youtube-downloader-4ktube.desktop
+      - install -Dm755 ${FLATPAK_DEST}/4ktube/flatpak/4ktube.sh ${FLATPAK_DEST}/bin/4ktube.sh
+      - install -Dm644 ${FLATPAK_DEST}/4ktube/flatpak/share/icons/icon.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.warlordsoftwares.youtube-downloader-4ktube.png
+      - install -Dm644 ${FLATPAK_DEST}/4ktube/flatpak/share/applications/youtube-downloader-4ktube.desktop ${FLATPAK_DEST}/share/applications/com.warlordsoftwares.youtube-downloader-4ktube.desktop
       - desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/com.warlordsoftwares.youtube-downloader-4ktube.desktop
-      - install -Dm644 ${FLATPAK_DEST}/4ktube/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml
+      - install -Dm644 ${FLATPAK_DEST}/4ktube/flatpak/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.youtube-downloader-4ktube.metainfo.xml
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_4KTUBE.tar.gz
-        sha256: 92e951104cb31d46fa9160e0c69c6627104b7a8f79c2e37cf13cb3e7adea0174
-
-
-
-
+        sha256: e852bf35f8b66568397361468fc0193eee684c4087c1b891a51e63e14e6c0aa3
