@@ -12,8 +12,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/64/62/428ef076be88fa93716b576e4a01f919d25968913e817077a386fcbe4f42/certifi-2023.11.17-py3-none-any.whl",
-          "sha256": "e036ab49d5b79556f99cfc2d9320b34cfbe5be05c5871b51de9329f0603b0474"
+          "url": "https://files.pythonhosted.org/packages/c4/51/29046e48f693c54e5b7412216d447a1d8362c9653148d98c02cdf65fa733/certifi-2026.10.19-py3-none-any.whl",
+          "sha256": "42d35340cc5b9ba78e818ddbff0c5b1c2b779de448a340fd1b989f5fa8670e1b"
         },
         {
           "type": "file",
@@ -113,8 +113,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/38/fc/bce832fd4fd99766c04d1ee0eead6b0ec6486fb100ae5e74c1d91292b982/certifi-2025.1.31-py3-none-any.whl",
-          "sha256": "ca78db4565a652026a4db2bcdf68f2fb589ea80d0be70e03929ed730746b84fe"
+          "url": "https://files.pythonhosted.org/packages/c4/51/29046e48f693c54e5b7412216d447a1d8362c9653148d98c02cdf65fa733/certifi-2026.10.19-py3-none-any.whl",
+          "sha256": "42d35340cc5b9ba78e818ddbff0c5b1c2b779de448a340fd1b989f5fa8670e1b"
         },
         {
           "type": "file",
@@ -163,8 +163,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/Legrandin/pycryptodome/archive/refs/tags/v3.23.0.tar.gz",
-          "sha256": "5a905f0f4237b79aefee47f3e04568db2ecb70c55dd7cb118974c5260aa9e285",
+          "url": "https://github.com/Legrandin/pycryptodome/archive/refs/tags/v4.2.0.tar.gz",
+          "sha256": "505da9787103d1fc451aba677223db65c9b870b273f132fa862e918393349123",
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/Legrandin/pycryptodome/tags",
@@ -183,8 +183,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/aaugustin/websockets/archive/refs/tags/17.2.tar.gz",
-          "sha256": "0bc575816ee77a3033a251829ef38bdad78c308b85fdd65ea390c7a131099426",
+          "url": "https://github.com/aaugustin/websockets/archive/refs/tags/17.4.tar.gz",
+          "sha256": "80563c93e613e1ef6b579de346b405019be300b73c22f8dae7cfc79067492ddf",
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/aaugustin/websockets/tags",
@@ -203,8 +203,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/google/brotli/archive/refs/tags/v1.2.0.tar.gz",
-          "sha256": "816c96e8e8f193b40151dad7e8ff37b1221d019dbcb9c35cd3fadbfe6477dfec",
+          "url": "https://github.com/google/brotli/archive/refs/tags/v1.2.1.tar.gz",
+          "sha256": "98d35d11a78dc453aebb7d10c3748f3f73ff78c8267c0dc697b8631f67bf7e8f",
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/google/brotli/releases/latest",
